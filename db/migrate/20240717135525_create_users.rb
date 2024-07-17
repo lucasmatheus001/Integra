@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :name
       t.datetime :birthday
       t.integer "role", default: 1
-      t.integer "active", default: 1
+      t.integer "status", default: 1
 
       t.timestamps
     end
