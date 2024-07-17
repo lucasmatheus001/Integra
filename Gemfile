@@ -76,3 +76,5 @@ end
 gem "devise", "~> 4.9"
 
 gem "enum", "~> 1.0"
+
+gem "pg", "~> 1.5"
