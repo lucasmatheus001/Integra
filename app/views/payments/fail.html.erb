@@ -1,0 +1,21 @@
+
+<!-- About Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
+                <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/3273/3273587.png">
+            </div>
+            <div class="col-lg-6 wow " data-wow-delay="0.1s">
+                    <div class="alert alert-danger" role="alert">
+                       Compra não Efetuada!
+                    </div>
+                <h2 class="mb-4">Ouve Algum erro de processamento</h2>
+                <p class="mb-4">Alguma informação pode ter sido informada incorretamento e o processo não pode ser conluído.</p>
+                <%= link_to  "Tentar Novamente", payments_path ,class: "btn btn-primary rounded-pill border-2 py-3 px-5 animated slideInRight" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<i class="bi bi-check-circle-fill"></i>

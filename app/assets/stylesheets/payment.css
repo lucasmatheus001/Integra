@@ -1,0 +1,25 @@
+.App.background-card {
+    /* background-image: url(https://www.commbank.com.au/content/dam/commbank-assets/about-us/2018-04/AboutCommBank_cmphero.jpg); */
+    background-image: url(https://t2.tudocdn.net/619631?w=1920);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: blur(15px); */
+  }
+
+  nav.navbar.navbar-expand-lg.navbar-light.px-4.px-lg-5.py-3.py-lg-0 {
+    background-color: #00B98E !important;
+  }
+
+  .card {
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 1px solid #ecebf1;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 10px;
+    margin-top: 10rem;
+    opacity: 0.9;
+}

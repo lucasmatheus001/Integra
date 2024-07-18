@@ -21,6 +21,7 @@
                       <%= f.label :Name, class: "form-label" %>
                       <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control-input ", id: "name",placeholder: "Name" %>
                     </div>
+
                     <div class="mb-3 col-lg-12 col-md-12">
                       <%= f.label :Email, class: "form-label" %>
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control-input ", id: "email",placeholder: "Email" %>
@@ -41,13 +42,101 @@
                     </div>
                     
                     <div class="mb-3 col-lg-12 col-md-12">
+                      <%= f.label :Birtday, class: "form-label" %>
+                      <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday", class: "form-control-input ", id: "birhday",placeholder: "Birthday" %>
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
                       <div class="form-check">
                         <input type="checkbox" id="check-api-checkbox" class="form-check-input">
                         <label for="check-api-checkbox" class="form-check-label">I agree to the<a href="/pages/terms-and-conditions">Terms of Service </a> and <a href="/pages/terms-and-conditions">Privacy Policy.</a></label>
                       </div>
                     </div>
                     <div class="mb-0 d-grid gap-2 col-lg-12 col-md-12">
-                      <%= f.submit "Sign in", class: "btn btn-primary" %>
+                      <%= f.submit "Sign up", class: "btn btn-primary" %>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<%= form_with url: process_payment_path, method: :post, id: 'paymentForm' do %>
+  <div id="root">
+    <div class="App background">
+      <div id="db-wrapper">
+        <div class="d-flex flex-column container">
+          <div class="align-items-center justify-content-center g-0 min-vh-100 row">
+            <div class="py-8 py-xl-0 col-lg-5 col-md-5">
+              <div class="card"><div class="p-6 card-body">
+                <div class="mb-4">
+                  <a href="/">
+                    <img src="/static/media/logo-icon.ef90e78058ae6a66eabcbb0a6b6976f5.svg" alt="" class="mb-4">
+                  </a>
+                  <h1 class="mb-1 fw-bold">Sign up</h1>
+                  <span>Already have an account?<%= link_to  "Sign ip", user_session_path ,class: "ms-2 link"%>
+                  </span>
+                </div>
+                <form class="">
+                  <div class="row">
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="email" class="form-label">Email:</label>
+                      <input type="text" id="email" name="email" placeholder="Email" required class="form-control-input" id="email">
+                    </div>
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="amount" class="form-label">Valor:</label>
+                      <input type="text" id="amount" name="amount" placeholder="Valor R$" required class="form-control-input">
+                    </div>
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardNumber" class="form-label">Número do Cartão:</label>
+                      <input type="text" id="cardNumber" name="cardNumber" placeholder="cardholderName" required class="form-control-input">
+                    </div>
+                    
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardholderName" class="form-label">Nome do Titular:</label>
+                      <input type="text" id="cardholderName" name="cardholderName" placeholder="Valor R$" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardExpirationMonth" class="form-label">Mês de Expiração:</label>
+                      <input type="text" id="cardExpirationMonth" name="cardExpirationMonth" placeholder="MM" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardExpirationYear" class="form-label">Ano de Expiração:</label>
+                      <input type="text" id="cardExpirationYear" name="cardExpirationYear" placeholder="YY" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="securityCode" class="form-label">Código de Segurança:</label>
+                      <input type="text" id="securityCode" name="securityCode" placeholder="CVV" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="identificationType" class="form-label">Tipo de Documento:</label>
+                      <input type="text" id="identificationType" name="identificationType" placeholder="Document Type" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="identificationNumber" class="form-label">Número do Documento:</label>
+                      <input type="text" id="identificationNumber" name="identificationNumber" placeholder="Document Number" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <div class="form-check">
+                        <input type="checkbox" id="check-api-checkbox" class="form-check-input">
+                        <label for="check-api-checkbox" class="form-check-label">I agree to the<a href="/pages/terms-and-conditions">Terms of Service </a> and <a href="/pages/terms-and-conditions">Privacy Policy.</a></label>
+                      </div>
+                    </div>
+                    <div class="mb-0 d-grid gap-2 col-lg-12 col-md-12">
+                      <input type="hidden" id="cardToken" name="cardToken">
+                      <button type="submit" class="btn btn-primary">Pagar</button>
                     </div>
                   </div>
                 </form>

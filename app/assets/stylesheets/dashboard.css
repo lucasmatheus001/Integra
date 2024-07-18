@@ -1,0 +1,25 @@
+i.fa-regular.fa-5x.fa-dollar-sign.text-center {
+  text-align: center;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.box-field {
+  background-color: #00B98E !important;
+  /* color: white; */
+}
+
+.link-box {
+  color: white;
+  text-decoration: none;
+}
+
+.link-box:hover {
+  color: white!important;
+}
+
+.hero-header {
+  margin-bottom: 6rem;
+  padding: 6rem 0rem 0rem 0rem;
+}

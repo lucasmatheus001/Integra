@@ -78,3 +78,8 @@ gem "devise", "~> 4.9"
 gem "enum", "~> 1.0"
 
 gem "pg", "~> 1.5"
+gem 'mercadopago-sdk', '~> 2.0'
+
+gem "dotenv", "~> 3.1"
+
+gem "sass-rails", "~> 6.0"

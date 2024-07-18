@@ -1,0 +1,101 @@
+<%= form_with url: process_payment_path, method: :post, id: 'paymentForm' do %>
+  <div id="root">
+    <div class="App background-card">
+      <div id="db-wrapper">
+        <div class="d-flex flex-column container">
+          <div class="align-items-center justify-content-center g-0 min-vh-100 row">
+            <div class="py-8 py-xl-0 col-lg-5 col-md-5">
+              <div class="card"><div class="p-6 card-body">
+                <form class="">
+                  <div class="row">
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="email" class="form-label">Email:</label>
+                      <input type="text" id="email" name="email" placeholder="Email" required class="form-control-input" id="email">
+                    </div>
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="amount" class="form-label">Valor:</label>
+                      <input type="text" id="amount" name="amount" placeholder="Valor R$" required class="form-control-input">
+                    </div>
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardNumber" class="form-label">Número do Cartão:</label>
+                      <input type="text" id="cardNumber" name="cardNumber" placeholder="cardholderName" required class="form-control-input">
+                    </div>
+                    
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardholderName" class="form-label">Nome do Titular:</label>
+                      <input type="text" id="cardholderName" name="cardholderName" placeholder="Valor R$" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardExpirationMonth" class="form-label">Mês de Expiração:</label>
+                      <input type="text" id="cardExpirationMonth" name="cardExpirationMonth" placeholder="MM" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="cardExpirationYear" class="form-label">Ano de Expiração:</label>
+                      <input type="text" id="cardExpirationYear" name="cardExpirationYear" placeholder="YY" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="securityCode" class="form-label">Código de Segurança:</label>
+                      <input type="text" id="securityCode" name="securityCode" placeholder="CVV" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="identificationType" class="form-label">Tipo de Documento:</label>
+                      <input type="text" id="identificationType" name="identificationType" placeholder="Document Type" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-3 col-lg-12 col-md-12">
+                      <label for="identificationNumber" class="form-label">Número do Documento:</label>
+                      <input type="text" id="identificationNumber" name="identificationNumber" placeholder="Document Number" required class="form-control-input">
+                    </div>
+
+                    <div class="mb-0 d-grid gap-2 col-lg-12 col-md-12">
+                      <input type="hidden" id="cardToken" name="cardToken">
+                      <button type="submit" class="btn btn-primary">Pagar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  const mp = new MercadoPago('<%= ENV['MERCADO_PAGO_PUBLIC_KEY'] %>');
+
+  document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('paymentForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const cardData = {
+              cardNumber: document.getElementById('cardNumber').value.replace(/\s+/g, ''),
+              cardholderName: document.getElementById('cardholderName').value,
+              cardExpirationMonth: document.getElementById('cardExpirationMonth').value,
+              cardExpirationYear: document.getElementById('cardExpirationYear').value,
+              securityCode: document.getElementById('securityCode').value,
+              identificationType: document.getElementById('identificationType').value,
+              identificationNumber: document.getElementById('identificationNumber').value
+          };
+
+          console.log(cardData)
+
+          mp.createCardToken(cardData).then(function (response) {
+              if (response.error) {
+                  console.error(response.error);
+                  alert('Erro ao criar o token do cartão: ' + response.error.message);
+              } else {
+                  document.getElementById('cardToken').value = response.id;
+                  document.getElementById('paymentForm').submit();
+              }
+          }).catch(function (error) {
+              console.error('Erro ao processar o token do cartão:', error);
+          });
+      });
+  });
+</script>
