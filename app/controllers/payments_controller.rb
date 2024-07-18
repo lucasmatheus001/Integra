@@ -27,12 +27,15 @@ class PaymentsController < ApplicationController
       payment = payment_response[:response]
 
       if payment['status'] == 'approved'
-        render json: { status: 'success', message: 'Pagamento aprovado!' }
+        # render json: { status: 'success', message: 'Pagamento aprovado!' }
+        redirect_to payments_sucess_path
       else
-        render json: { status: 'error', message: payment['status_detail'] }
+        # render json: { status: 'error', message: payment['status_detail'] }
+        redirect_to payments_fail_path
       end
     rescue StandardError => e
       render json: { status: 'error', message: e.message }
+      redirect_to payments_fail_path
     end
   end
 
