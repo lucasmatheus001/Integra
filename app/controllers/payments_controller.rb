@@ -1,11 +1,22 @@
 class PaymentsController < ApplicationController
+  require 'pry'
+  require 'date'
+
   protect_from_forgery except: :process_payment
   def index
     @payments = current_user.role == 'admin' ? Payment.all : current_user.payments
   end
 
+  def new
+    @payment = Payment.new
+  end
+
+  def create
+      @payment = Payment.new(payment_params)
+  end
+
   def transations
-    @payments = current_user.role == 'admin' ? Payment.page(params[:page]).per(1) : current_user.payments.page(params[:page]).per(1)
+    @payments = current_user.role == 'admin' ? Payment.page(params[:page]).per(10) : current_user.payments.page(params[:page]).per(10)
   end
 
   def process_payment
@@ -30,14 +41,26 @@ class PaymentsController < ApplicationController
     begin
       payment_response = sdk.payment.create(payment_data)
       payment = payment_response[:response]
+      data_string = payment["cause"][0]["data"]
+      date_part = data_string.split(';').first
+
+      datetime_object = DateTime.strptime(date_part, '%d-%m-%YT%H:%M:%S%Z')
+
+      formatted_date = datetime_object.strftime('%Y-%m-%d %H:%M:%S.%N %z')
+
 
       if payment['status'] == 'approved'
         # render json: { status: 'success', message: 'Pagamento aprovado!' }
-        Payment.create(user_id: current_user.id, amount: transaction_amount, approved: true)
-        redirect_to payments_sucess_path
+        @new_payment = Payment.new(user_id: current_user.id, amount: payment_data[:transaction_amount], approved: true, created_at: formatted_date, updated_at: formatted_date )
+        @new_payment.save
+        redirect_to payments_success_path
       else
         # render json: { status: 'error', message: payment['status_detail'] }
-        Payment.create(user_id: current_user.id, amount: transaction_amount, approved: false)
+        @new_payment = Payment.new(user_id: current_user.id, amount: payment_data[:transaction_amount], approved: false, created_at: formatted_date, updated_at: formatted_date)
+        @new_payment.save
+
+        # binding.pry
+
         redirect_to payments_fail_path
       end
     rescue StandardError => e
@@ -49,7 +72,7 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    params.require(:payment).permit(:amount, :email, :user_id)
+    params.require(:payment).permit(:user_id, :amount,:approved)
   end
 
 end
