@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
+    before_action :set_user, only: [:destroy, :update, :active]
+
   def index
     @users = User.order(id: :desc)
+    authorize @users
   end
 
   def show
-      @users = User.all
+      @users = user.find(params[:id])
   end
 
   def new
@@ -27,8 +30,21 @@ class UsersController < ApplicationController
   end
 
   def destroy
-      @user.destroy
-      redirect_to users_path
+      @user.status = "inactive"
+      @user.save
+      redirect_to users_gerencial_path
+  end
+
+  def active
+    @user.status = "active"
+    @user.save
+    redirect_to users_gerencial_path
+
+  end
+
+  def gerencial
+    @users = User.order(id: :desc)
+    authorize @users
   end
 
   private
