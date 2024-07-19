@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  enum role: { admin: 0, otaku: 1}
+  enum role: { admin: 0, simple: 1}
   enum status: { inactive: 0, active: 1}
 
 
@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :name , presence: true
+  validates :birthday, presence: true
+
 end

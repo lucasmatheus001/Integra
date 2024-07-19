@@ -23,5 +23,7 @@ module MercPago
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+     Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
+     Date::DATE_FORMATS[:default] = "%d/%m/%Y"
   end
 end

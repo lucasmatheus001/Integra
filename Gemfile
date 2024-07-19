@@ -83,3 +83,7 @@ gem 'mercadopago-sdk', '~> 2.0'
 gem "dotenv", "~> 3.1"
 
 gem "sass-rails", "~> 6.0"
+
+gem "kaminari", "~> 1.2"
+
+gem "pundit", "~> 2.3"

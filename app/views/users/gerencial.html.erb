@@ -13,25 +13,35 @@
                           <thead>
                             <tr>
                               <th scope="col">id</th>
-                              <th scope="col">user_id</th>
                               <th scope="col">user_name</th>
-                              <th scope="col">amount</th>
-                              <th scope="col">approved</th>
+                              <th scope="col">user_role</th>
+                              <th scope="col">user_status</th>
+                              <th scope="col">birhday</th>
                               <th scope="col">Date</th>
+                              <th scope="col">#</th>
+                              <th scope="col">#</th>
                               
                             </tr>
                           </thead>
                           <tbody>
-                            <% if @payments.present? %>
-                              <% @payments.each do |payment| %>
+                            <% if @users.present? %>
+                              <% @users.each do |user| %>
                                 
                                 <tr>
-                                  <td><%= payment.id%></td>
-                                  <td><%= payment.user_id%></td>
-                                  <td><%= find_user_by_id(payment.user_id) %></td>
-                                  <td><%= payment.amount%></td>
-                                  <td><%= payment.approved%></td>
-                                  <td><%= post_date(payment.created_at)%></td>
+                                  <td><%= user.id%></td>
+                                  <td><%= user.name%></td>
+                                  <td><%= user.role%></td>
+                                  <td><%= user.status%></td>
+                                  <td><%= format_date(user.birthday)%></td>
+                                  <td><%= format_date(user.created_at)%></td>
+                                  <td><%= form_with url: inactivate_user_path(user), method: :put do |form| %>
+                                    <%= form.submit "Deletar" %>
+                                  <% end %> </td>
+                                  <td><%= form_with url: activate_user_path(user), method: :put do |form| %>
+                                    <%= form.submit "Ativar" %>
+                                  <% end %> </td>
+                                  
+                                 
                                   
                                 </tr>
                                 
@@ -39,8 +49,8 @@
                             <% end %>
                           </tbody>
                         </table>
-                        <% if @payments.present? %>
-                          <%= paginate @payments %>
+                        <% if @users.present? %>
+                          <%# <%= paginate @users %>
                         <% end %>
                     </div>
                   </div>

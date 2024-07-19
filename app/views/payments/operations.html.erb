@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="container-xxl bg-white p-0">
+
+        <%# Hero End %>
+        <div class="container-xxl bg-primary hero-header">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="text-white mb-4 animated zoomIn ">Seja Bem vindo ,</br> <%= current_user.name %></h1>
+                        <h3 class="text-white mb-4 animated zoomIn "> Bom lhe ver de volta :)</h3>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="img-fluid animated zoomIn" src="https://technext.github.io/bizconsult/img/hero.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%# end hero %>
+
+        <!-- Service Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                  <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Services</div>
+                  <h2 class="mb-5">Realizar operações</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to(payments_path,class:"trash-button-header icons-dashboard link-box") do %>
+                            <div class="p-5">
+                                <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-credit-card"></i></h5>
+                                <h4 class="mb-3 text-center">Realizar Pagamento</h4>
+                            </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to(payments_transations_path,class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-book"></i></h5>
+                            <h4 class="mb-3 text-center">Extratos</h4>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((edit_user_registration_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-user"></i></h5>
+                            <h4 class="mb-3 text-center">Gerenciar Perfil</h4>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((users_gerencial_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-user"></i></h5>
+                            <h4 class="mb-3 text-center">Gerenciar Usuários</h4>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+</body>
+
+</html>
