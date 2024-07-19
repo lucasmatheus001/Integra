@@ -109,8 +109,8 @@ Para testar a tela de pagamento utilize as seguintes informações de cartões:
 
 Para testar pagamentos aprovados e recusado use as seguintes informações:
 
-|Status de pagamento| Descrição| Documento de identidade|Tipo de Documento|
-| --- | --- | --- |
+|Status de pagamento| Descrição| Documento de identidade| Tipo de Documento|
+| --- | --- | --- | --- |
 |APRO| Pagamento aprovado | (CPF) 12345678909| CPF |
 |OTHE | Recusado por erro geral   | (CPF) 12345678909| CPF |
 
