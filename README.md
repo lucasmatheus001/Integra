@@ -59,6 +59,7 @@ Altere suas configurações no arquivos de variáveis de ambiente `.env` que pos
 - MERCADO_PAGO_ACCESS_TOKEN=''
 
 Acesse o site https://www.mercadopago.com.br/developers/panel/app do mercado pago para acessar suas credenciais e mudar as informações no arquivo acima, deixei um arquivo de exemplo caso deseje somente executar o projeto.
+
 ![Home da aplicação](https://imgur.com/bMIfmeb.gif)
 
 Para executar o projeto localmente, execute os seguintes comandos:
