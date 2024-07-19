@@ -45,13 +45,21 @@ Este é uma sistema para gerenciamento de do seus negócio / E-commerce, onde vo
 
 ## Instalando o projeto
 
-Altere as credenciais do banco em `config/database.yml`, em desenvolvimento e test já estão definidas as seguintes configurações:
+Altere as credenciais do banco em `config/database.yml`, em desenvolvimento e test já estão definidas as seguintes configurações, existe um arquivo como exemplo:
 
  - Host: localhost
  - Porta: 5432
  - Usuário: `DATABASE_USER`
  - Senha: `DATABASE_PASSWORD`
- - Databases: *desafio_Ruby_development* e *desafio_Ruby_test*
+ - Databases: *mercado_pago_development* e *mercado_pago_test*
+
+Altere suas configurações no arquivos de variáveis de ambiente `.env` que possuem informações sensíveis, existe um arquivo como exemplo.
+
+- MERCADO_PAGO_PUBLIC_KEY=''
+- MERCADO_PAGO_ACCESS_TOKEN=''
+
+Acesse o site https://www.mercadopago.com.br/developers/panel/app do mercado pago para acessar suas credenciais e mudar as informações no arquivo acima, deixei um arquivo de exemplo caso deseje somente executar o projeto.
+![Home da aplicação](https://imgur.com/bMIfmeb.gif)
 
 Para executar o projeto localmente, execute os seguintes comandos:
 
@@ -72,7 +80,7 @@ Serão cadastrados alguns Usuários e contas de banco para exemplificação . Cr
 Depois de instalar o projeto, execute os seguintes comandos:
 
     cd desafio-Ruby
-    rails s ou bin/dev
+    rails s 
 
 Abra seu navegador e acesse http://localhost:3000/
 
@@ -90,6 +98,20 @@ Acesse o sistema com um dos usuários abaixo ou se preferir acesse a opção cad
   - E-mail: teste@user.com  | senha: 123456
   - E-mail: teste2@user.com  | senha: 123456
  
- 
+## Tela de pagamento
+Para testar a tela de pagamento utilize as seguintes informações de cartões:
+
+|Cartão| Numero| CVC  | Date exp | 
+| --- | --- | --- | --- |
+|Visa| 4235 6477 2802 5682 | 123  | 11/25|
+|American Express | 3753 651535 56885| 1234 | 11/25|
+
+Para testar pagamentos aprovados e recusado use as seguintes informações:
+
+|Status de pagamento| Descrição| Documento de identidade|
+| --- | --- | --- |
+|APRO| Pagamento aprovado | (CPF) 12345678909|
+|OTHE | Recusado por erro geral   | (CPF) 12345678909|
+
 Por fim, a tela inicial do sistema fala um pouco sobre aplicação e os servições oferecidos . Na parte de Dashboard o cliente consegue ver os dados referents a sua conta e realizar operações no menu interativo, como (Acessar portal de operações,pagamentos,extrato de pagamentos, editar perfil).
 
