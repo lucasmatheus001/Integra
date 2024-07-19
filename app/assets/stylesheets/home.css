@@ -82,7 +82,7 @@
 
 .sticky-top.navbar .navbar-nav .nav-link {
   padding: 20px 0;
-  color: var(--dark);
+  color:  #FFFFFF;
 }
 
 .sticky-top.navbar .navbar-nav .nav-link:hover,
@@ -118,7 +118,7 @@
   .sticky-top.navbar .navbar-nav .nav-link {
       padding: 10px 0;
       margin-left: 0;
-      color: var(--dark);
+      color:  #FFFFFF;
   }
 
   .navbar .navbar-nav .nav-link:hover,
@@ -329,4 +329,16 @@
 
 .bg-primary {
   background-color: #00B98E !important;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+      color: #ffffff;
+  }
+
+  .navbar .navbar-nav .nav-link, .sticky-top.navbar .navbar-nav .nav-link {
+    padding: 10px 0;
+    margin-left: 0;
+    color: #ffffff;
+  }
 }
