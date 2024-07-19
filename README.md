@@ -37,11 +37,11 @@ Este é uma sistema para gerenciamento de do seus negócio / E-commerce, onde vo
 ## Pendências
 
  - [x] Documentação geral do sistema (README);
- - [] melhorar as seeds
- - [] melhorar os testes
- - [] regras de negócios
- - [] Aplicar corretamente a internacionalização na aplicação;
- - [] Melhorar ambientação para E-commerce ;
+ - [ ] melhorar as seeds
+ - [ ] melhorar os testes
+ - [ ] regras de negócios
+ - [ ] Aplicar corretamente a internacionalização na aplicação;
+ - [ ] Melhorar ambientação para E-commerce ;
 
 ## Instalando o projeto
 
@@ -60,7 +60,7 @@ Altere suas configurações no arquivos de variáveis de ambiente `.env` que pos
 
 Acesse o site https://www.mercadopago.com.br/developers/panel/app do mercado pago para acessar suas credenciais e mudar as informações no arquivo acima, deixei um arquivo de exemplo caso deseje somente executar o projeto.
 
-![Home da aplicação](https://imgur.com/bMIfmeb.gif)
+https://github.com/user-attachments/assets/c5dc78c7-3b90-4fbd-b9a9-11c5e1fbc8d8
 
 Para executar o projeto localmente, execute os seguintes comandos:
 
@@ -89,9 +89,9 @@ A seguinte página será exibida:
 
 ![Tela de Login da aplicação](https://imgur.com/DFE7pxx.png)
 
-![Home da aplicação](https://imgur.com/kpF8giR.gif)
+https://github.com/user-attachments/assets/c5b464ce-c75f-427e-bad6-9801ba2af3b6
 
-![Tela de Operações da aplicação](https://imgur.com/TfKkSQS.gif)
+https://github.com/user-attachments/assets/c22737e2-0240-467c-a6b2-e21ff081c0df
 
 Acesse o sistema com um dos usuários abaixo ou se preferir acesse a opção cadastrar e faça o cadastro de um novo usuário .
   - E-mail: admin@teste.com | senha: 123456
