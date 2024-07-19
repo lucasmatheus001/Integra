@@ -4,6 +4,10 @@ class PaymentsController < ApplicationController
     @payments = current_user.role == 'admin' ? Payment.all : current_user.payments
   end
 
+  def transations
+    @payments = current_user.role == 'admin' ? Payment.page(params[:page]).per(1) : current_user.payments.page(params[:page]).per(1)
+  end
+
   def process_payment
     require 'mercadopago'
     sdk = Mercadopago::SDK.new(ENV.fetch('MERCADO_PAGO_ACCESS_TOKEN', nil))
