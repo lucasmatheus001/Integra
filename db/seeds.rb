@@ -1,9 +1,36 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+#initial criation of seeds
+puts "Creating seeds..."
+puts "Creating Users..."
+
+User.create(name: "Leonardo DiCaprio",email: "admin@teste.com",password: "123456",password_confirmation: "123456",birthday: "1999-10-25",role:"admin")
+User.create(name: "Julianna Margulies",email: "admin2@teste.com",password: "123456",password_confirmation: "123456",birthday: "1999-04-27",role:"admin")
+User.create(name: "Jhonny Depp",email: "teste@user.com",password: "123456",password_confirmation: "123456",birthday: "1999-03-30",role:"simple")
+User.create(name: "Tom Hanks",email: "teste2@user.com",password: "123456",password_confirmation: "123456",birthday: "1999-05-30",role:"simple")
+
+#Creating payments
+Payment.create(amount: 100.00,approved: true,user_id: 1)
+Payment.create(amount: 200.00,approved: true,user_id: 2)
+Payment.create(amount: 300.00,approved: true,user_id: 3)
+Payment.create(amount: 350.00,approved: true,user_id: 3)
+Payment.create(amount: 380.00,approved: true,user_id: 3)
+Payment.create(amount: 390.00,approved: true,user_id: 3)
+Payment.create(amount: 400.00,approved: true,user_id: 3)
+Payment.create(amount: 450.00,approved: true,user_id: 3)
+Payment.create(amount: 460.00,approved: true,user_id: 3)
+Payment.create(amount: 550.00,approved: true,user_id: 3)
+Payment.create(amount: 560.00,approved: true,user_id: 3)
+Payment.create(amount: 670.00,approved: true,user_id: 3)
+Payment.create(amount: 760.00,approved: true,user_id: 3)
+Payment.create(amount: 770.00,approved: true,user_id: 3)
+Payment.create(amount: 400.00,approved: true,user_id: 4)
+Payment.create(amount: 500.00,approved: true,user_id: 4)
+Payment.create(amount: 600.00,approved: true,user_id: 4)
+Payment.create(amount: 700.00,approved: true,user_id: 4)
+Payment.create(amount: 800.00,approved: true,user_id: 4)
+Payment.create(amount: 900.00,approved: true,user_id: 4)
+Payment.create(amount: 1000.00,approved: true,user_id: 4)
+Payment.create(amount: 600.00,approved: true,user_id: 4)
+Payment.create(amount: 500.00,approved: true,user_id: 4)
+Payment.create(amount: 560.00,approved: true,user_id: 4)
+Payment.create(amount: 460.00,approved: true,user_id: 4)
+Payment.create(amount: 870.00,approved: true,user_id: 4)
