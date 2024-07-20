@@ -116,3 +116,9 @@ Para testar pagamentos aprovados e recusado use as seguintes informações:
 
 Por fim, a tela inicial do sistema fala um pouco sobre aplicação e os servições oferecidos . Na parte de Dashboard o cliente consegue ver os dados referents a sua conta e realizar operações no menu interativo, como (Acessar portal de operações,pagamentos,extrato de pagamentos, editar perfil).
 
+## Video Falando do desafio
+
+
+https://github.com/user-attachments/assets/0f9f54ab-5047-4372-bc33-7b7e4fd0ad87
+
+
