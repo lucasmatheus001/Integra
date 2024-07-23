@@ -80,7 +80,7 @@ Serão cadastrados alguns Usuários e contas de banco para exemplificação . Cr
 ## Executando o projeto
 Depois de instalar o projeto, execute os seguintes comandos:
 
-    cd desafio-Ruby
+    cd Integra
     rails s 
 
 Abra seu navegador e acesse http://localhost:3000/
