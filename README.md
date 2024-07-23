@@ -64,8 +64,8 @@ https://github.com/user-attachments/assets/c5dc78c7-3b90-4fbd-b9a9-11c5e1fbc8d8
 
 Para executar o projeto localmente, execute os seguintes comandos:
 
-    git clone git@github.com:lucasmatheus001/desafio-Ruby.git
-    cd desafio-Ruby
+    git clone git@github.com:lucasmatheus001/Integra.git
+    cd Integra
     bundle install
     yarn install
     rails db:create
